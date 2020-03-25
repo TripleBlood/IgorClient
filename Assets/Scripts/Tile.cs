@@ -2,28 +2,26 @@ namespace Models
 {
     public class Tile
     {
-        public bool[] AdjacencyArray = new bool[6];
-        // adjacencyMap
-        // [
-        // 	North		(+1; -1),
-        // 	NorthEast	(+1; 0),
-        // 	SouthEast	(0; +1),
-        // 	South		(-1; +1),
-        // 	SouthWest	(-1; 0),
-        // 	NorthWest	(0; -1)
-        // ]
+        public int CoordX;
+        public int CoordZ;
+        public int Height; // CoordY
 
-        public int height;
-
-        public bool traversable;
-        // public bool occupied;
+        public bool Traversable;
+        // public bool Occupied;
         // public GameObject CharacterOnTile;
 
-        public Tile()
+        public Tile(int x, int z)
         {
-            height = 0;
-            // occupied = false;
-            // CharacterOnTile = null;
+            CoordX = x;
+            Height = 0;
+            CoordZ = z;
+        }
+
+        public Tile(int x, int y, int z)
+        {
+            CoordX = x;
+            Height = y;
+            CoordZ = z;
         }
     }
 }
